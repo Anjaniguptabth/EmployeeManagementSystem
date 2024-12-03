@@ -1,0 +1,304 @@
+/* General container styling */
+.dashboard-container {
+  display: grid;
+  grid-template-rows: 60px 50px auto; /* Add a row for the horizontal sidebar */
+  grid-template-columns: 1fr; /* Single column layout */
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  grid-row: 1; /* Place the navbar in the first row */
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Sidebar styling - Now Horizontal */
+.sidebar {
+  grid-row: 2; /* Place the sidebar in the second row */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  background-color: #ff0;
+  padding: 10px 20px; /* Add left padding for better spacing */
+  border-bottom: 2px solid #ccc;
+  gap: 20px; /* Add space between sidebar items */
+}
+
+.sidebar-item {
+  padding: 10px 20px; /* Add padding for spacing */
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left; /* Align text to the left */
+}
+
+.sidebar-item.active {
+  background-color: #ffd700;
+  border-radius: 5px;
+}
+
+/* Create Employee Form Styling */
+.create-employee-form {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 40px 20px;
+  margin-bottom: 20px;
+  grid-template-rows: auto auto; /* Ensure rows adjust to content */
+}
+
+/* Label styles */
+.create-employee-form label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center; /* Align label text with inputs */
+}
+
+/* Input and select field styles */
+.create-employee-form input,
+.create-employee-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.create-employee-form input:focus,
+.create-employee-form select:focus {
+  border-color: #4caf50; /* Green border on focus */
+  outline: none;
+}
+/* Radio and Checkbox group styling */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adjust the space between the input and text */
+    font-size: 16px;
+    color: #333;
+}
+
+/* Ensure radio buttons and checkboxes align properly */
+.radio-group input,
+.checkbox-group input {
+    margin-right: 5px;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+/* Optionally, you can add specific widths to the checkbox/radio inputs if needed */
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    width: auto; /* Keeps their natural size */
+}
+
+/* Align radio/checkbox label with input */
+.radio-group label,
+.checkbox-group label {
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle; /* Align text next to checkbox/radio button */
+}
+
+
+/* Image preview container */
+.uploaded-image {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  grid-column: span 2; /* Make the image preview span across both columns */
+}
+
+.uploaded-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* Passport-size image */
+}
+
+/* Submit Button container */
+.submit-button-container {
+  grid-column: span 2; /* Ensure the button spans both columns */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Make form container left-aligned */
+.form-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 40px; /* Space on the left side */
+  margin-top: 20px; /* Ensure some space above the form */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For devices with screen width 768px or less (tablets) */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .sidebar {
+      flex-wrap: wrap; /* Allow the sidebar items to wrap */
+      padding: 10px;
+  }
+
+  .sidebar-item {
+      flex: 1 1 50%; /* Adjust the width for smaller screens */
+      text-align: center;
+  }
+
+  .create-employee-form {
+      grid-template-columns: 1fr; /* Single column form layout */
+      gap: 15px;
+      padding: 15px;
+  }
+
+  .create-employee-form label {
+      padding-right: 0;
+  }
+
+  .submit-button {
+      width: 100%; /* Make the submit button full width */
+  }
+
+  .form-container {
+      padding-left: 20px; /* Adjust for smaller screens */
+  }
+}
+/* Image preview container */
+.uploaded-image {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start; /* Align image to the left */
+  align-items: center; /* Center the image vertically if needed */
+  grid-column: span 2; /* Make the image preview span across both columns */
+}
+
+/* Styling for the uploaded image itself */
+.uploaded-image img {
+  width: 100px; /* Adjust the size for passport-size */
+  height: 100px; /* Adjust the size for passport-size */
+  object-fit: cover; /* Ensures the image fits within the container */
+  border-radius: 50%; /* Optional: make it circular */
+  margin-right: 15px; /* Space between the image and form elements */
+}
+
+
+/* For devices with screen width 480px or less (mobile phones) */
+@media screen and (max-width: 480px) {
+  .navbar {
+      padding: 5px;
+  }
+
+  .logo {
+      font-size: 18px;
+  }
+
+  .nav-link {
+      font-size: 14px;
+  }
+
+  .logout-btn {
+      padding: 5px;
+      font-size: 12px;
+  }
+
+  .sidebar-item {
+      flex: 1 1 100%; /* Each item takes full width */
+      padding: 10px;
+  }
+
+  .create-employee-form {
+      padding: 10px;
+  }
+
+  .create-employee-form label,
+  .create-employee-form input,
+  .create-employee-form select {
+      font-size: 14px;
+  }
+
+  .submit-button {
+      padding: 10px 20px;
+      width: 100%; /* Full-width submit button */
+  }
+
+  .form-container {
+      padding-left: 10px; /* Adjust for very small screens */
+  }
+}

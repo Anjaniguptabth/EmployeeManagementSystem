@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e60000;
+}
+
+/* Form Container */
+.edit-form {
+    margin: 20px auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align form content to the left */
+    display: grid;
+    margin: 40px 20px;
+    gap: 20px;
+    margin-bottom: 20px;
+    grid-template-rows: auto auto; /* Ensure rows adjust to content */
+}
+
+/* Align labels and inputs side by side */
+.edit-form label {
+    font-weight: bold;
+    margin-bottom: 0;
+    width: 150px; /* Fixed width for consistent label alignment */
+    text-align: left; /* Align label text to the right */
+    padding-right: 10px; /* Space between label and input */
+}
+
+/* Update form row for side-by-side layout */
+.edit-form .form-row {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between label and input */
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Inputs, selects, and buttons */
+.edit-form input,
+.edit-form select,
+.edit-form button {
+    flex: 1; /* Inputs and selects take remaining space */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.edit-form input:focus,
+.edit-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* File Upload Alignment */
+.edit-form input[type="file"] {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.edit-form .file-label {
+    font-style: italic;
+    margin-left: 10px; /* Space between label and file input */
+    white-space: nowrap; /* Prevent wrapping of the label text */
+}
+
+/* Radio Button Group Styling */
+.radio-group {
+    display: flex;
+    gap: 20px; /* Space between options */
+    align-items: center;
+}
+
+.radio-group label {
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Checkbox Group Styling */
+.checkbox-group {
+    display: flex;
+    gap: 20px; /* Space between options */
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Submit Button */
+.edit-form button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    width: fit-content;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Error and Success Messages */
+.edit-form .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.edit-form .success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.existing-image {
+    width: 100px; /* Set width for passport size */
+    height: 100px; /* Set height for passport size */
+    overflow: hidden;
+    border-radius: 50%; /* Make it round, if you want a circular image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.employee-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .edit-form {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .edit-form .form-row {
+        flex-direction: column; /* Stack form fields vertically */
+        align-items: flex-start; /* Align labels and inputs to the left */
+    }
+
+    .edit-form label {
+        text-align: left; /* Align label text to the left on smaller screens */
+        width: 100%; /* Full width for responsive layout */
+        margin-bottom: 5px; /* Space below label */
+        padding-right: 0;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        flex-direction: column; /* Stack options vertically on smaller screens */
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .edit-form {
+        padding: 15px;
+    }
+
+    .edit-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
